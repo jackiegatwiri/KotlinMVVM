@@ -27,6 +27,10 @@ class ListViewModel:ViewModel() {
             Country("CountryA"),
             Country("CountryB"),
             Country("CountryC"),
+            Country("CountryD"),
+            Country("CountryA"),
+            Country("CountryB"),
+            Country("CountryC"),
             Country("CountryD")
         )
         countryLoadError.value = false

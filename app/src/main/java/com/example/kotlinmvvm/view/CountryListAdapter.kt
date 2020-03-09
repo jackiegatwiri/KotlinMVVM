@@ -9,7 +9,12 @@ import com.example.kotlinmvvm.model.Country
 import kotlinx.android.synthetic.main.item_country.view.*
 
 class CountryListAdapter(var countries : ArrayList<Country>) : RecyclerView.Adapter<CountryListAdapter.CountryViewHolder>() {
-
+//telling the adapter to re-do the whole list and add new countries
+    fun updateCountries(newCountries: List<Country>){
+        countries.clear()
+        countries.addAll(newCountries)
+        notifyDataSetChanged()
+    }
 
     //basically creates the CountryViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = CountryViewHolder (
