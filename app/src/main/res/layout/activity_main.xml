@@ -9,6 +9,7 @@
     tools:context=".view.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,6 +17,7 @@
             android:id="@+id/countriesList"
             android:layout_width="405dp"
             android:layout_height="729dp"
+            android:layout_marginTop="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

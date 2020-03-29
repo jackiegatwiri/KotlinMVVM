@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.kotlinmvvm.R
 import com.example.kotlinmvvm.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,11 +30,17 @@ class MainActivity : AppCompatActivity() {
             adapter = countryListAdapter
         }
 
+        swipeRefreshLayout.setOnRefreshListener {
+            swipeRefreshLayout.isRefreshing = false
+            viewModel.refresh()
+        }
+
         observeViewModel()
     }
 
     fun observeViewModel(){
         viewModel.countries.observe(this, Observer {countries ->
+            countriesList.visibility = View.VISIBLE
             countries?.let { countryListAdapter.updateCountries(it)}
         })
 
